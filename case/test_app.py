@@ -24,13 +24,15 @@ class TokitApp():
       self.page_element(values).send_key(data)
 
     def run_main(self):
-      time.sleep(5)
-      self.page_element("guide_element").click()
-      time.sleep(3)
-      self.page_element("guide_element1").click()
+      # time.sleep(5)
+      # self.page_element("guide_element").click()
+      # time.sleep(3)
+      # self.page_element("guide_element1").click()
       time.sleep(1)
       self.page_element("shipu_element").click()
-      time.sleep(30)
+      time.sleep(20)
+      self.devices.tap([(181,1808),(249,1876)],500)
+      time.sleep(3)
       self.devices.quit()
 
 if __name__ == "__main__":

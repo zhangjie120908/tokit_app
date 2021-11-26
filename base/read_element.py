@@ -11,7 +11,7 @@ class ReadElement():
     #读取ini文件
     def read_ini(self):
         cf = configparser.ConfigParser()
-        cf.read(r"F:/tokit_interface/tokit_app/config/test.ini", encoding="utf-8")
+        cf.read(r"../config/test.ini", encoding="utf-8")
         return cf
     #获取节点
     def get_element(self,inivalues):
@@ -27,8 +27,10 @@ class ReadElement():
             return self.driver.find_element_by_id(value)
         elif key == "class":
             return self.driver.find_element_by_class_name(value)
-        else:
+        elif key == "xpath":
             return self.driver.find_element_by_xpath(value)
+        else:
+            return self.driver.tap(value)
 
 
 # if __name__ == "__main__":
